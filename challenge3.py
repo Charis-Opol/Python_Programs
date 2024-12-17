@@ -1,0 +1,1 @@
+print("What do you call a bear without teeth?\nA gummy bear")
