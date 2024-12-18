@@ -1,0 +1,7 @@
+word = input("Enter the first word in a nursery rhyme: ")
+lenght = len(word) 
+print("The word has ",lenght," letters")
+start = int(input("Enter a starting number: "))
+end = int(input("Enter a finishing number: "))
+part = (word[start:end])
+print(part)
