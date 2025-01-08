@@ -1,0 +1,8 @@
+countries = ("Uganda", "Kenya", "Tanzania", "Rwanda", "Burundi", "Sudan")
+print(countries)
+print()
+answer = input("Enter of the countries displayed: ")
+print(f"The index of {answer} in the tuple is {countries.index(answer)}")
+print(countries)
+number = int(input("Enter a number from 0 to 5: "))
+print(f"The country with the index {number} is {countries[number]}")
