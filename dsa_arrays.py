@@ -89,3 +89,25 @@ for i in range (1, n):
             break
     my_array1[insert_index] = current_value
 print("Sorted array:", my_array1)
+
+# Quick sort algorithm
+
+def quick_sort(array):
+    if len(array) <= 1:
+        return array
+    
+    pivot = array[-1]
+    left = []
+    right = []
+    for i in range(len(array)):
+        if array[i] < pivot:
+            left.append(array[i])
+        elif array[i] > pivot:
+            right.append(array[i])
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+my_array1 = [64, 34, 25, 12, 22, 11, 90, 5]
+print("Sorted array:", quick_sort(my_array1))
+
+
+    
