@@ -143,5 +143,53 @@ def merge(left, right):
 
 my_array1 = [64, 34, 25, 12, 22, 11, 90, 5]
 print("Sorted array:", merge_sort(my_array1))
+my_array2 = merge_sort(my_array1)
+
+#Binary Search
+
+def binary_search(array, target_value):
+    left = 0
+    right = len(array) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if array[mid] == target_value:
+            return mid
+
+        if array[mid] < target_value:
+            left = mid + 1
+        elif array[mid] > target_value:
+            right = mid - 1
+    return -1
+
+print(my_array2)
+number = int(input("Enter the target number you are searching for: "))
+result_index = binary_search(my_array2, number)
+if result_index is not -1:
+    print(f"{number} is found in index {result_index}")
+else: 
+    print(f"{number} is not found")
+
+#Linear sort
+
+def linear_sort(array, target_value):
+    n = len(array) - 1
+    for i in range(n):
+        if array[i] == target_value:
+            return i
+        else: 
+            return -1
+
+my_array1 = [64, 34, 25, 12, 22, 11, 90, 5]
+num = int(input("Enter the number you are searching for: "))
+result = linear_sort(my_array, num)
+if result != -1:
+    print(f"{num} is found in index {result}")
+else:
+    print(f"{num} is not found")
+
+
+
 
     
