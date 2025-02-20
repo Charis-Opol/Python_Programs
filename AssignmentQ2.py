@@ -28,9 +28,18 @@ def array_merging(array1, array2):
 
 a = [1, 12, 15, 26, 38] 
 b = [2, 13, 17, 30, 45]
-print("Merged array:", array_merging(a,b))
+merged_array = array_merging(a,b)
+print("Merged array:", merged_array)
 
 
 # Median of both arrays
-n = len(a)
-m = n/2
+n = len(merged_array)
+print(len(merged_array))
+if n % 2 == 0:
+    median1 = n//2
+    print(median1)
+    median2 = (n+2)//2
+    print(median2)
+    print("The median of the merged array is ",(merged_array[median1 - 1] + merged_array[median2 - 1])/2)
+else:
+    print("The median of the merged array is ", merged_array[((n+1)//2)])
