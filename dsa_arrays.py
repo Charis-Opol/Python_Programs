@@ -52,7 +52,7 @@ print("Sorted array: ", my_array1)
 #Improved selection sort algorithm
 
 my_array1 = [64, 34, 25, 12, 22, 11, 90, 5]
-for i in range (n):
+for i in range (n - 1):
     min_index = i
     for j in range(i + 1, n):
         if my_array1[j] < my_array1[min_index]:
@@ -163,10 +163,11 @@ def binary_search(array, target_value):
             right = mid - 1
     return -1
 
+my_array2 = [1,2,5,6,23,78,122]
 print(my_array2)
 number = int(input("Enter the target number you are searching for: "))
 result_index = binary_search(my_array2, number)
-if result_index is not -1:
+if result_index != -1:
     print(f"{number} is found in index {result_index}")
 else: 
     print(f"{number} is not found")
