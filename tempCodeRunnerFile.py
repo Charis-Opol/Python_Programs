@@ -1,25 +1,25 @@
-import math 
-import matplotlib.pyplot as plt
-import numpy as np
 
-time_complexities = []
-inputs = []
-for i in range (1, 101):
-    answer = i * math.log10(i)
-    time_complexities.append(answer)
-    inputs.append(i)
+def binary_search(array, target_value):
+    left = 0
+    right = len(array) - 1
 
+    while left <= right:
+        mid = (left + right) // 2
 
-print(time_complexities)
-print(inputs)
+        if array[mid] == target_value:
+            return mid
 
-x = np.array(inputs)
-y = np.array(time_complexities)
-plt.plot(x , y, marker = 'o', linestyle = '-', color = 'b', label = 'Data')
+        if array[mid] < target_value:
+            left = mid + 1
+        elif array[mid] > target_value:
+            right = mid - 1
+    return -1
 
-plt.xlabel("Input size")
-plt.ylabel("Time complexity")
-plt.title("Line graph showing the nature of the quarsi-logarithmic time complexity")
-plt.legend
-
-plt.show
+my_array2 = [1,2,5,6,23,78,122]
+print(my_array2)
+number = int(input("Enter the target number you are searching for: "))
+result_index = binary_search(my_array2, number)
+if result_index != -1:
+    print(f"{number} is found in index {result_index}")
+else: 
+    print(f"{number} is not found")
