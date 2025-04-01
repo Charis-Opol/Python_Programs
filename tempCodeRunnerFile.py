@@ -1,25 +1,10 @@
-
-def binary_search(array, target_value):
-    left = 0
-    right = len(array) - 1
-
-    while left <= right:
-        mid = (left + right) // 2
-
-        if array[mid] == target_value:
-            return mid
-
-        if array[mid] < target_value:
-            left = mid + 1
-        elif array[mid] > target_value:
-            right = mid - 1
-    return -1
-
-my_array2 = [1,2,5,6,23,78,122]
-print(my_array2)
-number = int(input("Enter the target number you are searching for: "))
-result_index = binary_search(my_array2, number)
-if result_index != -1:
-    print(f"{number} is found in index {result_index}")
-else: 
-    print(f"{number} is not found")
+my_array1 = [64, 34, 25, 12, 22, 11, 90, 5]
+n = len(my_array1)
+for i in range(n - 1):
+    min_index = i
+    for j in range(i + 1, n):
+        if my_array1[j] < my_array1[min_index]:
+            min_index = j
+    min_value = my_array1.pop(min_index)
+    my_array1.insert(i, min_value)
+print("Sorted array: ", my_array1)
